@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>Blockchat</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #ccc;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        .column {
+            flex: 50%;
+        }
+        @media screen and (max-width: 480px) {
+          .row {
+              flex-direction: column;
+          }
+        }
+    </style>
+    <link rel="stylesheet" href="/css/loader.css">
+</head>
+<body>
+    <h1>Hello there.</h1>
+
+    <div class="row">
+        <div class="column">
+            <h3>Secret Key:</h3>
+                <input id="secret-key" type="text">
+            <h3>Public Key:</h3>
+                <input id="public-key" type="text">
+            <h3>Message Signature:</h3>
+                <input id="sign" type="">
+            <h3>Message:</h3>
+                <input type="text" placeholder="Enter message to sign" id="message">
+            <h3></h3>
+            <div>
+                <input type="button" value="Generate keys" id="gen-key-btn"><br><br>
+                <input type="button" value="Sign Message" id="sign-msg"><br><br>
+                <input id="verify-btn" type="button" value="Verify Message">
+            </div>
+        </div>
+        <div class="column">
+            <h3>Hello from the other side</h3>
+            <input id="receiver" type="text" placeholder="Receiver public key"><br>
+            <input id="signed-tx" type="text" placeholder="Transaction signature"><br>
+            <input id="new-tx" type="button" value="Send Message"><br>
+            <div id="loader"></div><br>
+            <input id="etag" type="text" placeholder="Transaction etag"><br>
+            <input id="tx-unconfirmed-btn" type="button" value="Check transaction unconfirmed"><br>
+            <input id="tx-unconfirmed" type="text" placeholder="Transaction unconfirmed"><br>
+            <input id="tx-confirmed-btn" type="button" value="Check transaction confirmed"><br>
+            <input id="tx-confirmed" type="text" placeholder="Transaction confirmed"><br>
+            <input id="ws-tx-message" type="text" placeholder="Websocket message"><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h3>Test websockets</h3>
+            <input id="ws-chat-sender" type="text" placeholder="Sender to monitor"><br>
+            <input id="ws-chat-button" type="button" value="Monitor sender">
+            <ul id="ws-chat-list">
+                <li>Chats will appear here</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/js/digital-sign.js" type="text/javascript"></script>
+    <script src="/js/server-talk.js" type="text/javascript"></script>
+    <script src="/js/sodium.js" type="text/javascript" async></script>
+</body>
+</html>

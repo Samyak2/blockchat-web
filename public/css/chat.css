@@ -1,0 +1,9 @@
+.chat-rec {
+    text-align: left;
+}
+.chat-sent {
+    text-align: right;
+}
+.chat-user {
+    cursor: pointer;
+}

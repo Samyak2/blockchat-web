@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <title>Blockchat</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #ccc;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        .column {
+            flex: 50%;
+        }
+        @media screen and (max-width: 480px) {
+          .row {
+              flex-direction: column;
+          }
+        }
+    </style>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <div id="main" class="row">
+        <div id="left" class="column">
+            <h3>Host:</h3>
+                <input id="host" type="text" placeholder="Host">
+                <input id="host-btn" type="button" value="Update host">
+            <h3>Secret Key:</h3>
+                <input id="secret-key" type="text">
+                <input type="button" value="Generate keys" id="gen-key-btn">
+            <h3>Public Key:</h3>
+                <input id="public-key" type="text">
+            <h3>Chats</h3>
+            <ul id="chats">
+            </ul>
+            <div id="add-chat-form">
+                <input id="add-chat-receiver" type="text" placeholder="Receiver public key">
+                <input id="add-chat-button" type="button" value="Add chat">
+            </div>
+        </div>
+        <div id="right" class="column">
+            <h3>Chat</h3>
+            <ul id="chat">
+            </ul>
+            <div id="chat-form">
+                <input id="chat-msg" type="text" placeholder="Enter your message here">
+                <input id="chat-send-button" type="button" value="Send">
+            </div>
+        </div>
+    </div>
+    <script src="/js/chat.js" type="text/javascript"></script>
+    <script src="/js/sodium.js" type="text/javascript" async></script>
+</body>
+</html>

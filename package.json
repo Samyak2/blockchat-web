@@ -1,0 +1,26 @@
+{
+  "name": "blockchat-web",
+  "version": "0.0.1",
+  "description": "Web frontend for Blockchat - a blockchain-based messaging application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "blockchain",
+    "cryptography",
+    "chat",
+    "messaging"
+  ],
+  "author": "Samyak S Sarnayak",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  }
+}
